@@ -6,4 +6,7 @@ else
   LAST_SUNDAY=$(date --date='last Sun' +'%Y-%m-%d')
 fi
 mkdir -p data-processed/UpgUmibUsi-MultiBayes
-wget -O data-processed/UpgUmibUsi-MultiBayes/$LAST_SUNDAY-UpgUmibUsi-MultiBayes.csv https://www.dropbox.com/s/m9pxh715g0bvofs/$LAST_SUNDAY-UpgUmibUsi-MultiBayes.csv?dl=0
+cd data-processed/UpgUmibUsi-MultiBayes
+wget -O forecasts.zip 'https://www.dropbox.com/sh/vokzaxb4kmv67gr/AADDofoOZ32L5_WlLWn6SaTra?dl=1'
+unzip forecasts.zip $LAST_SUNDAY-UpgUmibUsi-MultiBayes.csv
+rm forecasts.zip
